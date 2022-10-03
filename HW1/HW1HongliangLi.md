@@ -231,14 +231,16 @@
 
 * Plot the distribution of residuals of your model. Discuss the residuals of your model based on your Multiple Linear Regression assumptions.
   
+  ![avatar](https://raw.githubusercontent.com/HongliangLiPSU/IE582-Fall2022/main/HW1/LearningCurve.png)
   
-
 * Try different learning rate and plot the learning curve in the same plot.
+  
+  ![avatar](https://raw.githubusercontent.com/HongliangLiPSU/IE582-Fall2022/main/HW1/DiffLearningRate.png)
 
 * List possible two actions that can be taken to improve the model performance. (You are only required to list actions.)
   
   1. First, adjusting a learning rate, which is alpha here.
-  2. 2)	Second, the collinearity occurs among the different predictor variables which violates the assumption of linear regressions. The possible methods to solve this problem is using Ridge regression.
+  2. Second, the collinearity occurs among the different predictor variables which violates the assumption of linear regressions. The possible methods to solve this problem is using Ridge regression.
  
  
   
