@@ -129,7 +129,9 @@
   $$
   \boldsymbol{\beta}_{ols}^*=(\boldsymbol{X}^\top\boldsymbol{X})^{-1}\boldsymbol{X}^\top\boldsymbol{y}
   $$
-  where 
+  
+  where
+  
   $$
   \boldsymbol{X}=\left(\begin{array}{ccccc}
   1 & x_{1,1} & x_{1,2} & \cdots & x_{1, d} \\
@@ -138,6 +140,7 @@
   1 &x_{n, 1} & x_{n, 2} & \cdots & x_{n, d}
   \end{array}\right)
   $$
+  
   $$
   \boldsymbol{y} = \left(\begin{array}{c}
   y_1 \\
@@ -185,10 +188,13 @@
   $X_j$ are linearly independent so as to calculate $X^{\mathrm{T}}X$. This assumption may not be true.
   
 * Ridge Regression is a solution for the issues of OLS by adding the $\ell_2$ norm for the parameter vector as regularizer on the objective function:
+
   $$
     f_{RR}(\boldsymbol{\beta}) = \frac{1}{2}\|\boldsymbol{X}\boldsymbol{\beta}-\boldsymbol{y}\|^2_2+\lambda\|\boldsymbol{\beta}\|_2^2
   $$
+  
   where $\lambda$ denotes the regularization parameter.
+  
   Find the optimal solution with respect to $\boldsymbol{\beta}$ in matrix notation. Please provide sufficient reasoning for your steps.
   
   Let's consider a simple linear regression problem
