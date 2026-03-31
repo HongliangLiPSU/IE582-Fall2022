@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ie582-food-insecurity-index"
+version = "0.1.0"
+description = "Nationwide county-level food insecurity index pipeline"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "scikit-learn>=1.3",
+  "xgboost>=2.0",
+  "shap>=0.45",
+  "openpyxl>=3.1",
+  "plotly>=5.20"
+]
+
+[project.scripts]
+ie582-build-index = "ie582_food_insecurity.cli:main"
+ie582-build-map = "ie582_food_insecurity.map_cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
