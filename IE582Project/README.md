@@ -120,6 +120,31 @@ Then open:
 
 `http://localhost:8000/outputs/maps/county_index_map_geo.html`
 
+## Deploy to Vercel
+
+Use the dedicated static folder `vercel_deploy/` to avoid Python runtime detection.
+
+One-time setup:
+
+```bash
+npm i -g vercel
+vercel login
+vercel link --cwd vercel_deploy
+```
+
+Deploy from `IE582Project` root:
+
+```bash
+.venv/bin/python build_food_insecurity_map.py
+./sync_vercel_deploy.sh
+vercel --cwd vercel_deploy --prod
+```
+
+Notes:
+
+- `vercel_deploy/index.html` is the only page deployed.
+- If you regenerate the map, run the same 3 commands again.
+
 ## Useful options
 
 ```bash
