@@ -41,7 +41,10 @@ class MapConfig:
     output_data: Path = PROJECT_ROOT / "outputs" / "maps" / "county_index_map_data.csv"
     output_missing: Path = PROJECT_ROOT / "outputs" / "maps" / "missing_counties.csv"
     output_summary: Path = PROJECT_ROOT / "outputs" / "maps" / "map_summary.json"
-    title: str = "County Food Insecurity Index"
+    title: str = "U.S. County-Level Food Insecurity Index"
+    subtitle: str = (
+        "Data-driven county-level risk index (0–100 scale; higher indicates higher risk)"
+    )
 
 
 def _clean_columns(df: pd.DataFrame) -> pd.DataFrame:
@@ -280,11 +283,7 @@ def create_county_map(config: MapConfig) -> Dict[str, Any]:
 
     imputed_count = int(merged["imputed"].sum())
     missing_after = int(merged["missing_after_strategy"].sum())
-    title = (
-        f"{config.title}<br>"
-        f"<sup>Missing strategy: {config.missing_strategy} | "
-        f"Imputed: {imputed_count} | Remaining missing: {missing_after}</sup>"
-    )
+    title = f"{config.title}<br><sup>{config.subtitle}</sup>"
     fig.update_layout(
         title=title,
         margin={"r": 0, "t": 80, "l": 0, "b": 0},
